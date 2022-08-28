@@ -93,7 +93,7 @@ const MyCard = ({ match }) => {
 
   return (
     <>
-      {match.type == "Twenty20" ? getMatchCard() : ""}
+      {match.type === "Twenty20" ? getMatchCard() : ""}
       <Dialog
         open={open}
         onClose={handleClose}

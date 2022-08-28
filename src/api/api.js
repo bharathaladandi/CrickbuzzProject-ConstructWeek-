@@ -1,12 +1,14 @@
-const API_KEY = "1c016e7fa3204a229b71a37b45a1eb23";
-// https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1c016e7fa3204a229b71a37b45a1eb23
+const API_KEY = "b3584631-965a-4643-a16a-1a6a3a7a5ced";
+
 
 export const getMatches = () => {
-  const url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${API_KEY}`;
+  const url = `https://api.cricapi.com/v1/series?apikey=${API_KEY}&offset=0`;
   console.log("URL", url);
   return fetch(url)
     .then((response) => {
+      // console.log(response)
       return response.json();
+     
     })
     .catch((error) => {
       console.log("ERROR ", error);
@@ -16,7 +18,7 @@ export const getMatches = () => {
 //get the score of the cuurent match
 
 export const getMatchDetail = (id) => {
-  const url = `https://newsapi.org/v2/top-headlines?country=us&category=unique_id=${id}&apikey=${API_KEY}`;
+  const url = `https://api.cricapi.com/v1/series?apikey=unique_id=${id}&apikey=${API_KEY}&offset=0`;
   return fetch(url)
     .then((response) => response.json())
     .catch((error) => console.log(error));
